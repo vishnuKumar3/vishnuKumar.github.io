@@ -1,0 +1,54 @@
+<!doctype html>
+<title>images</title>
+<style>.p{margin:5px 550px;} a{width:10px;height:10px;border:1px solid black;border-radius:5px;margin-left:10px;float:left;cursor:pointer;}
+.image{display:none;} img{animation-name:zoom;animation-duration:3s;}
+@keyframes zoom{from{transform:scale(0)} to{transform:scale(1)}}</style>
+<img id="main" src="1.jpg" style="margin-left:200px;height:500px;border-radius:10px;">
+<div class="image" id="1">
+<img src="1.jpg" style="margin-left:200px;height:500px;border-radius:10px;">
+</div>
+
+<div class="image" id="2">
+<img src="2.png" style="margin-left:200px;height:500px;border-radius:10px;"></img>
+</div>
+
+<div class="image" id="3">
+<img src="3.png" style="margin-left:200px;height:500px;border-radius:10px;"></img>
+</div>
+
+<div class="p">
+<a onclick="myfunction('1')" ></a>
+<a onclick="myfunction('2')" ></a>
+<a onclick="myfunction('3')" ></a></div>
+
+
+<script>
+window.setInterval(time,3000);
+var opt;
+var a;
+function myfunction(opt){
+document.getElementById("main").style.display="none";
+total=document.getElementsByClassName("image");
+var i;
+for(i=0;i<total.length;i++){
+	total[i].style.display="none";}
+document.getElementById(opt).style.display="block";
+document.getElementById(opt).style.width="500px;";}
+function time(){
+if(a==undefined){
+	a=2;
+}
+else if(a==1){
+	myfunction('1');
+	a=2;}
+else if(a==2){
+	myfunction('2');
+	a=3;}
+else if(a==3){
+	myfunction('3');
+	a=1;}}
+</script>
+
+
+
+
